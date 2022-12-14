@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+  <form method="GET">
+    <div class="dropdown">
+      <div id="kereso" class="kereso">
+        <input type="text" placeholder="Keresés.." id="input">
+        <ul>
+          <% for (let p of macskak) { %>
+          <li>
+            <%= p.szem_szin %>
+          </li>
+            <% } %>
+        </ul>
+      </div>
+    </div>
+  </form>
+  <form method="POST">
+    <table style="margin: auto;">
+      <tr>
+        <th style="border-bottom: 2px solid black;">Szem szín</th>
+        <th style="border-bottom: 2px solid black;">Súly</th>
+      </tr>
+      <% for (let p of macskak) { %>
+        <tr>
+          <td><%= p.szem_szin %></td>
+          <td><%= p.suly %></td>
+        </tr>
+    <% } %>
+    </table>
+
+    <a href="/cats/new">Új macska felvétele</a>
+  </form>
+  
+
+</body>
+</html>
